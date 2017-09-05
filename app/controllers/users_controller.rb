@@ -10,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    # If current authorization key is an existing user, display all the particular user's notes
+    authenticate_request!
+    if @current_user
+      render json: { notes: @current_user.notes }
+    end
   end
 
   private
