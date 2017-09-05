@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password])
+      # auth_token = JsonWebToken.encode({user_id: user.id})
       render json: { token: @user, status: 200 }
     elsif @user
       render json: { error: @user.errors.full_messages, status: 403 }
