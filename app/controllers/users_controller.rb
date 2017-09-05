@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: { user_id: @user.id, status: 200 }
     else
-      render json: { error: @user.errors, status: 420 }
+      render json: { error: @user.errors.full_messages, status: 420 }
     end
   end
 
