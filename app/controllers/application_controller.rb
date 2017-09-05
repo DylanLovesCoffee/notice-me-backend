@@ -20,9 +20,8 @@ class ApplicationController < ActionController::API
     auth_header = request.headers['Authorization']
     token = auth_header.split(' ').last
     JsonWebToken.decode(token)
-    rescue
-      nil
-    end
+  rescue
+    nil
   end
 
   def load_current_user!
