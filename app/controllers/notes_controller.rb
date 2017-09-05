@@ -8,7 +8,7 @@ class NotesController < ApplicationController
     if @note.save
       render json: { note_id: @note.id, status: 200 }
     else
-      render json: { error: @note.errors, status: 420 }
+      render json: { error: @note.errors.full_messages, status: 420 }
     end
   end
 
@@ -26,7 +26,7 @@ class NotesController < ApplicationController
     if @note.update_attributes(note_params)
       render json: { note_id = @note.id, status: 200 }
     else
-      render json: { error: @note.errors, status: 420 }
+      render json: { error: @note.errors.full_messages, status: 420 }
     end
   end
 

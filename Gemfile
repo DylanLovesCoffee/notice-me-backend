@@ -14,6 +14,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 
 gem 'bcrypt'
+gem 'jwt'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -28,7 +29,7 @@ gem 'bcrypt'
 # gem 'rack-cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
